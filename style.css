@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+:root{
+    --color-primary-1: #8bc34a;
+    --color-primary-2: #8bc34aa6;
+
+    --color-neutral-1: #f8fafc;
+    --color-neutral-4: #C0C0C0;
+    --color-neutral-2: #24232b;
+    --color-neutral-3: #13121a;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+body{
+    height: 100vh;
+    background-color: var(--color-neutral-1);
+    transition: .5s;
+}
+
+.trilho{
+    width: 80px;
+    height: 30px;
+    background-color: var(--color-neutral-4);
+    margin-top: 30px;
+    margin-left: 93%;
+    border-radius: 150px;
+    position: relative;
+    cursor: pointer;
+}
+
+.trilho .indicador{
+    width: 30px;
+    height: 30px;
+    background-color: var(--color-primary-1);
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    transform: scale(.8);
+    transition: .5s;
+}
+
+.trilho.dark{
+    background-color: var(--color-neutral-2);
+}
+
+.trilho.dark .indicador{
+    left: 50px;
+    background-color: var(--color-primary-1);
+}
+
+.titulo.dark{
+    color: var(--color-neutral-1);
+}
+
+body.dark{
+    background-color: var(--color-neutral-3);
+}
+
+#principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8%;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px ;
+}
+
+#container_img{
+    width: 100px;;
+}
+
+.titulo{
+    color: var(--color-neutral-3);
+    font-weight: 500px;
+    margin-bottom: 10px;
+}
+
+.container_senha{
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    padding: 8px 18px;
+}
+
+.senha{
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#copy{
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary-1);
+    height: 40px;
+    width: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#copy:hover{
+    color: var(--color-primary-2);
+}
+
+#senha_itens{
+    width: 400px;
+    background-color: var(--color-neutral-2);
+    color: var(--color-neutral-1);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 18px;
+}
+
+#size{
+    width: 50px;
+    text-align: center;
+    border: none;
+    border-radius: 4px;
+}
+
+#size::-webkit-inner-spin-button,
+#size::-webkit-outer-spin-button{
+    opacity: 1;
+}
+
+#size:focus{
+    outline: 2px solid var(--color-primary-1);
+}
+
+.itens{
+    display: flex;
+    gap: 14px;
+}
+
+.botoes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.botao_gerar{
+    background-color: var(--color-primary-1);
+    border: none;
+    margin-top: 12px;
+    padding: 12px;
+    padding: 10px 0px;
+    border-radius: 4px;
+    color: var(--color-neutral-1);
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color .4s;
+}
+
+.botao_gerar:hover{
+    background-color: var(--color-primary-2);
+}
+
+/*retirar o overflow dos desktops*/
+
+@media (min-width: 768px) and (max-height: 1080px) {
+    body{
+        overflow: hidden;
+    }
+}
+
+/* resposividade */
+
+@media screen and (max-width: 884px) {
+    
+    .trilho{
+        width: 50px;
+        height: 20px;
+        margin-left: 85%;
+
+    }
+
+    .trilho .indicador{
+        width: 20px;
+        height: 20px;
+    }
+
+    .trilho.dark .indicador{
+        left: 29px;
+    }
+
+    .quantidade{
+        font-size: 15px;
+    }
+
+    #container_img{
+        width: 70px;
+    }
+
+    .titulo{
+        font-weight: 100px;
+    }
+
+    #senha_itens{
+        width: 324px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    
+    .trilho{
+        margin-top: 10px;
+        margin-left: 80%;
+    }
+
+    #container_img{
+        width: 50px;
+    }
+
+    h1{
+        font-size: 20px;
+    }
+
+    .quantidade{
+        font-size: 11px;
+    }
+
+    .container_senha{
+        width: 100%;
+        padding: 5px;
+        max-width: 270px;
+    }
+
+    #senha_itens{
+        width: 270px;
+        font-size: 12px;
+    }
+
+    .botao_gerar{
+        margin-top: 5px;
+        padding: 10px 0px;
+        font-size: 15px;
+    }
+}
